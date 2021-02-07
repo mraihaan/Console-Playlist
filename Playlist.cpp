@@ -21,12 +21,10 @@ void Playlist::addSong(SongArtist songArtist) {
 		existingSongs++;
 		std::cout << "success" << std::endl;
 		return;
-
 	}
 	else {
 		std::cout << "can not insert " << songArtist.getTitle() << ";" << songArtist.getArtist() << std::endl;
 		return;
-
 	}
 }
 void Playlist::playSong(int position) {
@@ -36,7 +34,6 @@ void Playlist::playSong(int position) {
 	else {
 		std::cout << "played " << position << " " << playlist[position - 1].getTitle() << ";" << playlist[position - 1].getArtist() << std::endl;
 	}
-
 }
 void Playlist::eraseSong(int position) {
 	if ((position < 1) || (position > existingSongs)) {
@@ -53,14 +50,10 @@ void Playlist::eraseSong(int position) {
 		playlist[m_addPosition - 1].setTitle(""); //make it empty
 		playlist[m_addPosition - 1].setArtist(""); //make it empty
 
-
 		m_addPosition--;
 
 		std::cout << "success" << std::endl;
-
 	}
-
-
 }
 Playlist::~Playlist() {
 	delete[] playlist;
@@ -71,6 +64,5 @@ std::string lowercase(std::string str) {
 	for (std::size_t i = 0; i < str.length(); i++) {
 		str[i] = std::tolower(str[i]);
 	}
-
 	return str;
 }
